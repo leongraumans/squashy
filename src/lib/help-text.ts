@@ -1,7 +1,7 @@
-import commandLineUsage from "command-line-usage";
+import commandLineUsage, { type Section } from "command-line-usage";
 
 export const outputHelp = () => {
-  const sections = [
+  const sections: Section[] = [
     {
       header: "SQUASHY",
       content: "The Strava Squash Sync Service.",
@@ -17,10 +17,12 @@ export const outputHelp = () => {
         },
         {
           name: "offet",
-          description: "The offset for retrieving Strava activities in hours.",
+          description:
+            "The offset for retrieving Strava activities in hours (default: 1).",
           alias: "o",
           type: Number,
           typeLabel: "{underline hours}",
+          defaultValue: 1,
         },
       ],
     },

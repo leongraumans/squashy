@@ -1,25 +1,16 @@
-import type { OptionDefinition } from "command-line-args";
-import commandLineArgs from "command-line-args";
-import dotenv from "dotenv";
 import { outputHelp } from "~src/lib/help-text";
-import { getActivities } from "~src/logic/activity";
-
-dotenv.config();
+import { getCommandLineArgs } from "./config";
+import { syncActivities } from "./logic/activity";
 
 async function main(): Promise<void> {
-  const optionDefinitions: OptionDefinition[] = [
-    { name: "help", alias: "h", type: Boolean },
-  ];
-
-  const { help } = commandLineArgs(optionDefinitions);
+  const { help, offset } = getCommandLineArgs();
 
   if (help) {
     outputHelp();
     return;
   }
 
-  const myActivities = await getActivities();
-  console.info(`${myActivities.length} activities found!`);
+  syncActivities(offset);
 }
 
 main();
