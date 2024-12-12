@@ -48,13 +48,13 @@ following:
 Run the following command to sync your activities:
 
 ```bash
-pnpm sync
+pnpm squashy
 ```
 
 For detailed usage options, check the built-in help:
 
 ```bash
-pnpm sync --help
+pnpm squashy --help
 ```
 
 ---
