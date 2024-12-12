@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "sync": "tsx src/index.ts"
+    "squashy": "tsx src/index.ts"
   },
   "keywords": [],
   "author": "",
