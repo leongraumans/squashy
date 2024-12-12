@@ -6,5 +6,5 @@ export const STRAVA_CONFIG = {
   clientId: process.env.STRAVA_CLIENT_ID,
   clientSecret: process.env.STRAVA_CLIENT_SECRET,
   refreshToken: process.env.STRAVA_REFRESH_TOKEN,
-  userId: 111015360,
+  userId: process.env.STRAVA_USER_ID,
 };
