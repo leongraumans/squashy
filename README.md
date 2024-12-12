@@ -8,9 +8,9 @@ an activity type, Squashy bridges the gap between your game and Strava.
 
 ## 🚀 Features
 
-- **Seamless Sync**: Upload your squash activities to Strava in just a few steps.
-- **Smartwatch Compatibility**: Works around devices that don't offer squash as a dedicated activity
-  type.
+- **Activity Correction**: Perfect if you are already syncing your squash activities automatically
+  to Strava, but as the wrong sport type. This tool updates those activities so that they're marked
+  as a squash match.
 - **Simple Configuration**: Easy setup with your Strava API credentials.
 
 ---
