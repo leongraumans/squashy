@@ -4,15 +4,17 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "squashy": "tsx src/index.ts"
+    "squashy": "tsx src/index.ts",
+    "format": "prettier --write ."
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@types/node": "^22.10.1",
     "@types/command-line-args": "^5.2.3",
-    "@types/command-line-usage": "^5.0.4"
+    "@types/command-line-usage": "^5.0.4",
+    "@types/node": "^22.10.1",
+    "prettier": "^3.4.2"
   },
   "dependencies": {
     "command-line-args": "^6.0.1",

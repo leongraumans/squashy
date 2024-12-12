@@ -37,9 +37,8 @@ export const getAccessToken = async (): Promise<string> => {
   const {
     access_token: token,
     expires_in: expiresIn,
-  }: { access_token: string; expires_in: number } = await handleResponse(
-    response
-  );
+  }: { access_token: string; expires_in: number } =
+    await handleResponse(response);
 
   cachedToken = {
     token,
