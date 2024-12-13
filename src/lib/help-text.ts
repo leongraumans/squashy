@@ -25,13 +25,22 @@ export const outputHelp = () => {
           typeLabel: "{underline hours}",
           defaultValue: 1,
         },
+        {
+          name: "language",
+          description:
+            "Set the language for the Strava activity descriptions. Currently supports {underline nl} (Dutch) and {underline en} (English).",
+          alias: "l",
+          type: String,
+          typeLabel: "{underline code}",
+          defaultValue: "nl",
+        },
       ],
     },
     {
       header: "🎉 Example Usage",
       content: [
         "$ pnpm squashy --help",
-        "$ pnpm squashy --offset 5",
+        "$ pnpm squashy --offset 5 --language en",
         "$ pnpm squashy",
       ],
     },

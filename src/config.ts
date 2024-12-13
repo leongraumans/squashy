@@ -14,6 +14,7 @@ export const getCommandLineArgs = () => {
   const optionDefinitions: OptionDefinition[] = [
     { name: "help", alias: "h", type: Boolean },
     { name: "offset", alias: "o", type: Number, defaultValue: 1 },
+    { name: "language", alias: "l", type: String, defaultValue: "nl" },
   ];
 
   return commandLineArgs(optionDefinitions);

@@ -8,15 +8,3 @@ export const getUnixTimestamp = (offsetHours: number): number => {
   const offsetTime = now.getTime() - offsetHours * 3600 * 1000;
   return Math.floor(offsetTime / 1000);
 };
-
-export const getDescriptionFromDateTime = (dateTime: string): string => {
-  const date = new Date(dateTime);
-  const hour = date.getHours();
-  if (hour < 12) {
-    return "Potje Squash in de ochtend.";
-  }
-  if (hour < 18) {
-    return "Potje Squash in de middag.";
-  }
-  return "Potje Squash in de avond.";
-};

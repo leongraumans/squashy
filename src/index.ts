@@ -3,14 +3,14 @@ import { getCommandLineArgs } from "./config";
 import { syncActivities } from "./logic/activity";
 
 async function main(): Promise<void> {
-  const { help, offset } = getCommandLineArgs();
+  const { help, offset, language } = getCommandLineArgs();
 
   if (help) {
     outputHelp();
     return;
   }
 
-  syncActivities(offset);
+  syncActivities(offset, language);
 }
 
 main();
