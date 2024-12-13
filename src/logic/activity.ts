@@ -1,8 +1,8 @@
 import { STRAVA_CONFIG } from "~src/config";
-import { getDescriptionFromDateTime } from "~src/lib/descriptions";
 import { getAccessToken, handleResponse } from "~src/lib/strava";
 import { getUnixTimestamp } from "~src/lib/time";
 import type { Activity, ActivityUpdateParams, Sport } from "~src/lib/types";
+import { buildUrl, getDescriptionFromDateTime } from "~src/lib/utils";
 
 const ACTIVITY_ENDPOINT = "https://www.strava.com/api/v3/";
 const EXCLUDE_SPORT_TYPES: Sport[] = ["Squash", "Run", "Hike", "Walk"];
@@ -35,11 +35,17 @@ export const syncActivities = async (
 export const getActivities = async (
   offsetHours: number
 ): Promise<Activity[]> => {
-  const unixTimeStamp = getUnixTimestamp(offsetHours);
-  const accessToken = await getAccessToken();
-  const response = await fetch(
-    `${ACTIVITY_ENDPOINT}athletes/${STRAVA_CONFIG.userId}/activities?after=${unixTimeStamp}&access_token=${accessToken}`
+  const url = buildUrl(
+    ACTIVITY_ENDPOINT,
+    `athletes/${STRAVA_CONFIG.userId}/activities`,
+    {
+      after: getUnixTimestamp(offsetHours),
+      access_token: await getAccessToken(),
+    }
   );
+
+  const response = await fetch(url);
+
   return await handleResponse(response);
 };
 
@@ -51,17 +57,18 @@ export const updateActivity = async (
     Object.entries(updateParams).filter(([_, value]) => value !== undefined)
   );
 
-  const accessToken = await getAccessToken();
-  const response = await fetch(
-    `${ACTIVITY_ENDPOINT}activities/${id}?access_token=${accessToken}`,
-    {
-      method: "PUT",
-      body: JSON.stringify(filteredParams),
-      headers: {
-        "Content-Type": "application/json",
-      },
-    }
-  );
+  const url = buildUrl(ACTIVITY_ENDPOINT, `activities/${id}`, {
+    access_token: await getAccessToken(),
+  });
+
+  const response = await fetch(url, {
+    method: "PUT",
+    body: JSON.stringify(filteredParams),
+    headers: {
+      "Content-Type": "application/json",
+    },
+  });
+
   await handleResponse(response);
 
   console.debug(`Updated activity ${id}: ${JSON.stringify(filteredParams)}`);

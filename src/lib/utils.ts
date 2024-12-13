@@ -1,4 +1,19 @@
 /**
+ * Build a URL with a base URL, path and query parameters
+ */
+export const buildUrl = (
+  baseUrl: string,
+  path: string,
+  params: Record<string, unknown>
+): string => {
+  const url = new URL(path, baseUrl);
+  for (const key of Object.keys(params)) {
+    url.searchParams.append(key, params[key] as string);
+  }
+  return url.toString();
+};
+
+/**
  * Get a localized description based on the time of day
  * @param dateTime The date and time in string format
  * @param inputLanguage The language to use for the description
