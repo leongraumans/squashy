@@ -9,8 +9,8 @@ an activity type, Squashy bridges the gap between your game and Strava.
 ## 🚀 Features
 
 - **Activity Correction**: Perfect if you are already syncing your squash activities automatically
-  to Strava, but as the wrong sport type. This tool updates those activities so that they're marked
-  as a squash match.
+  to Strava, but as the wrong sport type (e.g. "Workout"). This tool updates those activities so
+  that they're marked as a squash match.
 - **Simple Configuration**: Easy setup with your Strava API credentials.
 
 ---

@@ -5,7 +5,7 @@ import type { Activity, ActivityUpdateParams, Sport } from "~src/lib/types";
 import { buildUrl, getDescriptionFromDateTime } from "~src/lib/utils";
 
 const ACTIVITY_ENDPOINT = "https://www.strava.com/api/v3/";
-const EXCLUDE_SPORT_TYPES: Sport[] = ["Squash", "Run", "Hike", "Walk"];
+const INCLUDE_SPORT_TYPES: Sport[] = ["Workout"];
 
 export const syncActivities = async (
   offsetHours: number,
@@ -15,20 +15,19 @@ export const syncActivities = async (
   console.debug(`Found ${activities.length} activities`);
 
   for (const activity of activities) {
-    // TODO: skip certain sports for now, replace with specific inclusion list
-    if (EXCLUDE_SPORT_TYPES.includes(activity.sport_type)) {
-      console.debug(`Skipping activity of type ${activity.sport_type}`);
+    if (INCLUDE_SPORT_TYPES.includes(activity.sport_type)) {
+      await updateActivity(activity.id, {
+        name: "Squash",
+        sport_type: "Squash",
+        description: getDescriptionFromDateTime(
+          activity.start_date_local,
+          language
+        ),
+      });
       continue;
     }
 
-    await updateActivity(activity.id, {
-      name: "Squash",
-      sport_type: "Squash",
-      description: getDescriptionFromDateTime(
-        activity.start_date_local,
-        language
-      ),
-    });
+    console.debug(`Skipping activity of type ${activity.sport_type}`);
   }
 };
 
