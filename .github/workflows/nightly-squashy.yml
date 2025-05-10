@@ -26,4 +26,9 @@ jobs:
         run: pnpm i
 
       - name: Run Squashy
+        env:
+          STRAVA_CLIENT_ID: ${{ secrets.STRAVA_CLIENT_ID }}
+          STRAVA_CLIENT_SECRET: ${{ secrets.STRAVA_CLIENT_SECRET }}
+          STRAVA_REFRESH_TOKEN: ${{ secrets.STRAVA_REFRESH_TOKEN }}
+          STRAVA_USER_ID: ${{ secrets.STRAVA_USER_ID }}
         run: pnpm squashy --offset 25
