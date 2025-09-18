@@ -32,7 +32,7 @@ importers:
         version: 22.14.1
       prettier:
         specifier: ^3.4.2
-        version: 3.4.2
+        version: 3.6.2
 
 packages:
 
@@ -264,8 +264,8 @@ packages:
   lodash.camelcase@4.3.0:
     resolution: {integrity: sha512-TwuEnCnxbc3rAvhf/LbG7tJUDzhqXyFnv3dtzLOPgCG/hODL7WFnsbwktkD7yUV0RrreP/l1PALq/YSg6VvjlA==}
 
-  prettier@3.4.2:
-    resolution: {integrity: sha512-e9MewbtFo+Fevyuxn/4rrcDAaq0IYxPGLvObpQjiZBMAzB9IGmzlnG9RZy3FFas+eBMu2vA0CszMeduow5dIuQ==}
+  prettier@3.6.2:
+    resolution: {integrity: sha512-I7AIg5boAr5R0FFtJ6rCfD+LFsWHp81dolrFD8S79U9tb8Az2nGrJncnMSnys+bpQJfRUzqs9hnA81OAA3hCuQ==}
     engines: {node: '>=14'}
     hasBin: true
 
@@ -459,7 +459,7 @@ snapshots:
 
   lodash.camelcase@4.3.0: {}
 
-  prettier@3.4.2: {}
+  prettier@3.6.2: {}
 
   resolve-pkg-maps@1.0.0: {}
 
