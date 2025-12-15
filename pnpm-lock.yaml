@@ -29,7 +29,7 @@ importers:
         version: 5.0.4
       '@types/node':
         specifier: ^22.10.1
-        version: 22.14.1
+        version: 22.19.3
       prettier:
         specifier: ^3.4.2
         version: 3.6.2
@@ -192,8 +192,8 @@ packages:
   '@types/command-line-usage@5.0.4':
     resolution: {integrity: sha512-BwR5KP3Es/CSht0xqBcUXS3qCAUVXwpRKsV2+arxeb65atasuXG9LykC9Ab10Cw3s2raH92ZqOeILaQbsB2ACg==}
 
-  '@types/node@22.14.1':
-    resolution: {integrity: sha512-u0HuPQwe/dHrItgHHpmw3N2fYCR6x4ivMNbPHRkBVP4CvN+kiRrKHWk3i8tXiO/joPwXLMYvF9TTF0eqgHIuOw==}
+  '@types/node@22.19.3':
+    resolution: {integrity: sha512-1N9SBnWYOJTrNZCdh/yJE+t910Y128BoyY+zBLWhL3r0TYzlTmFdXrPwHL9DyFZmlEXNQQolTZh3KHV31QDhyA==}
 
   ansi-styles@4.3.0:
     resolution: {integrity: sha512-zbB9rCJAT1rbjiVDb2hqKFHNYLxgtk8NURxZ3IZwD3F6NtxbXZQCnnSi1Lkx+IDohdPlFp222wVALIheZJQSEg==}
@@ -377,7 +377,7 @@ snapshots:
 
   '@types/command-line-usage@5.0.4': {}
 
-  '@types/node@22.14.1':
+  '@types/node@22.19.3':
     dependencies:
       undici-types: 6.21.0
 
